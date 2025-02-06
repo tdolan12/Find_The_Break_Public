@@ -26,7 +26,7 @@ Accurately diagnosing bone fractures from X-ray images is critical for effective
 - **Senthil Periaswamy**
 
 ## Report
-![Find the Break Report](https://github.com/tdolan12/Find_The_Break_Public/blob/main/FindTheBreak_281%20Final%20Report.pdf[/embed] )
+![Find the Break Report][embed](https://github.com/tdolan12/Find_The_Break_Public/blob/main/FindTheBreak_281%20Final%20Report.pdf)[/embed]
 
 ## Directory Highlights
 
