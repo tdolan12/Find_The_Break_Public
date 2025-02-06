@@ -30,44 +30,50 @@ Accurately diagnosing bone fractures from X-ray images is critical for effective
 
 ^^^ Click to Read Full Report ^^^
 
-## Directory Highlights
+## Highlights
 
-Although this is a public repository, the data and executable code are not available for direct access. Below are descriptions of the project structure and key files:
+- Best Model: The highest performing model was a Non-linear SVM, achieving an AUC of 0.97, demonstrating superior accuracy in fracture detection.
 
-### **Final Report**
-- **Documents/Proposal and Report/FindTheBreak_281 Final Report**: Contains the detailed final report, outlining the project methodology, experiments, and results.
+- Feature Engineering: Implemented GLCM and LBP descriptors to capture texture features and ResNet-50 embeddings for deep learning-driven feature representation.
 
-### **Best Model**
-- **Code/Best Hyperparameter Search Notebooks/parameter_tuning_no_preprocessing.ipynb**: Documents the search for the best-performing model, a Non-linear SVM trained on images with no preprocessing and 140 GLCM and LBP features.
+- Robust Preprocessing: Applied Gaussian filtering for noise removal, contrast enhancement, and Canny Edge Detection to highlight fracture structures.
 
-### **Generalization Results**
-- **Code/Best Hyperparameter Search Notebooks/FindTheBreak_281_Final_Project_Base_and_Best_Classifiers_Training_and_Testing.ipynb**: Evaluates model performance across different datasets to test generalization.
+- Generalization Results: The most generalizable model combined ResNet and LBP features, achieving 79% validation accuracy.
+
+- Dimensionality Reduction: PCA analysis retained 99% variance, enhancing interpretability and efficiency.
+
+- Bounding Box Detection: Conducted initial bounding box experiments for localizing fractures in X-ray images.
+
+- Visualization & Analysis: TSNE and PCA visualizations provided insights into feature separability and model performance.
+
+## Technical Notes
+
+### **Data Collection & Preprocessing**
+- The dataset, sourced from Kaggle, contains **9,363 X-ray images** evenly split between fractured and non-fractured cases.
+- Images were resized to **224x224 pixels** for consistency.
+- **Noise reduction** was applied using **Gaussian filtering** to remove salt-and-pepper noise.
+- **Contrast enhancement** was performed to improve edge visibility.
+- **Canny Edge Detection** was employed to highlight fracture structures.
+
+### **Feature Extraction**
+- **Gray-Level Co-Occurrence Matrix (GLCM)**: Captures texture relationships between pixel intensities, providing 140 extracted features.
+- **Local Binary Patterns (LBP)**: Extracts texture information by comparing pixel intensities, generating 34 feature descriptors.
+- **ResNet-50 Features**: A **pre-trained CNN model** extracts deep learning-based features for better representation.
+
+### **Classification Models**
+- Various classifiers were tested, including **Logistic Regression, Linear SVM, Non-linear SVM, and CNNs**.
+- The **Non-linear SVM** model achieved the highest **AUC of 0.97**.
+- A **ResNet-50 CNN** model was tested but did not outperform the SVM.
+
+### **Model Evaluation & Optimization**
+- **Principal Component Analysis (PCA)** reduced dimensionality while retaining **99% variance**.
+- **TSNE visualization** illustrated non-linear separability in the dataset.
+- **Hyperparameter tuning** was performed to optimize the best-performing models.
 
 ### **Bounding Box Experiment**
-- **Code/bounding_box_experiment_pipeline.ipynb**: Explores bounding box detection for localizing fractures in X-ray images.
+- Initial work on **bounding box detection** was conducted to explore localized fracture identification.
+- Further refinements are required to enhance localization accuracy.
 
-## Directory Structure
-
-### **Code/**
-Contains all executable code for the project, organized into subdirectories for specific tasks.
-
-- **ResNet/CNN**: Scripts for building, training, and evaluating deep learning models.
-- **EDA and Preprocessing**: Notebooks and scripts for Exploratory Data Analysis and preprocessing steps.
-- **Best Hyperparameter Search Notebooks**: Documents the model optimization and generalization process.
-- **Original Pipelines and Model Exploration**: Early-stage models, initial experiments, and data pipelines.
-
-### **Slides/**
-A collection of slide decks used for class presentations and project updates.
-
-### **Documents/**
-Supporting documentation, including:
-- **Proposal and Reports**: PDFs of the project proposal and final reports.
-
-### **Data/**
-Stores X-ray images and related datasets.
-
-- **Best Feature Extraction Train and Test CSV**: Contains CSV files with extracted features for training and testing.
-- **Final Train and Test Image Folders**: Organized with an 80:20 split for training and testing datasets.
 
 ## License
 
