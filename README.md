@@ -28,6 +28,8 @@ Accurately diagnosing bone fractures from X-ray images is critical for effective
 ## Report
 [![Find the Break Report](https://github.com/tdolan12/Find_The_Break_Public/blob/main/Report%20Image.png?raw=true)](https://github.com/tdolan12/Find_The_Break_Public/blob/main/FindTheBreak_281%20Final%20Report.pdf)
 
+^^^ Click to Read ^^^
+
 ## Directory Highlights
 
 Although this is a public repository, the data and executable code are not available for direct access. Below are descriptions of the project structure and key files:
