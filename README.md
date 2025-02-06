@@ -74,7 +74,7 @@ Accurately diagnosing bone fractures from X-ray images is critical for effective
 - Initial work on **bounding box detection** was conducted to explore localized fracture identification.
 - Further refinements are required to enhance localization accuracy.
 
-Code Access
+## Code Access
 This repository is private. If you have any questions or would like to discuss the project, please message me directly.
 
 ## License
